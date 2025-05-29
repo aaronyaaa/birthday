@@ -16,11 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error initializing carousel:', error);
     }
 
-    // Initialize confetti button with error handling
-    const confettiBtn = document.getElementById('confettiBtn');
-    if (confettiBtn) {
-        confettiBtn.addEventListener('click', createConfetti);
-    }
+    // Trigger confetti animation automatically on page load
+    createConfetti();
 });
 
 // Confetti creation function

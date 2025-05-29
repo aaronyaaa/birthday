@@ -1,0 +1,258 @@
+/* Image Gallery Styles */
+.image-gallery {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #fff0f6; /* Light pink background */
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .image-gallery h2 {
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between images */
+  }
+  
+  .images-container img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .images-container img.rotated-left {
+    transform: rotate(-10deg);
+  }
+  
+  .images-container img.rotated-right {
+    transform: rotate(10deg);
+  }
+  
+  .images-container img:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker background for focus */
+    overflow: auto;
+    padding: 40px 20px; /* Padding to give space around image */
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .modal-content {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    width: auto; /* Allow width auto to preserve original */
+    max-height: 90vh; /* Prevent vertical overflow */
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    border-radius: 10px;
+    user-select: none;
+  }
+  
+  .close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1060;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .images-container img {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .modal {
+      padding: 20px 10px;
+    }
+  
+    .modal-content {
+      max-height: 80vh;
+      width: auto;
+    }
+  
+    .close {
+      font-size: 30px;
+      top: 15px;
+      right: 15px;
+    }
+  }
+  
+
+  .personal-message {
+    background-color: #fff4f6; /* Soft light pink */
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px 25px;
+    box-shadow: 0 8px 20px rgba(214, 51, 108, 0.15);
+    font-family: 'Poppins', sans-serif;
+    color: #6b1e3f;
+    text-align: center;
+  }
+  
+  .personal-message h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #d6336c;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .personal-message p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    max-width: 90%;
+    margin: 0 auto;
+    color: #444;
+  }
+  
+  /* Responsive */
+  @media (max-width: 576px) {
+    .personal-message {
+      margin: 30px 15px;
+      padding: 20px 15px;
+    }
+    
+    .personal-message h2 {
+      font-size: 2rem;
+    }
+    
+    .personal-message p {
+      font-size: 1.1rem;
+    }
+  }
+  
+
+  /* Quotes Section */
+.quotes {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 30px 25px;
+  background-color: #fff4f6;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(214, 51, 108, 0.15);
+  font-family: 'Poppins', sans-serif;
+  color: #6b1e3f;
+  text-align: center;
+}
+
+.quotes h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  color: #d6336c;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.quotes blockquote {
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 600px;
+  color: #444;
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Optional quotation mark styling */
+.quotes blockquote::before {
+  content: "“";
+  font-size: 4rem;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  color: #d6336c;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Guestbook Section */
+.guestbook {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px 15px;
+  background-color: #fff0f6;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(214, 51, 108, 0.15);
+  font-family: 'Poppins', sans-serif;
+  color: #6b1e3f;
+  text-align: center;
+}
+
+.guestbook h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #d6336c;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* Make iframe responsive */
+.guestbook iframe {
+  width: 100%;
+  height: 650px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(214, 51, 108, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .quotes, .guestbook {
+    margin: 30px 15px;
+    padding: 15px 10px;
+  }
+  
+  .quotes h2 {
+    font-size: 2rem;
+  }
+  
+  .quotes blockquote {
+    font-size: 1.1rem;
+    padding-left: 30px;
+  }
+  
+  .guestbook h2 {
+    font-size: 2rem;
+  }
+  
+  .guestbook iframe {
+    height: 500px;
+  }
+}

@@ -1,3 +1,4 @@
+/* ---------- General Body & Typography ---------- */
 body {
   background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
   text-align: center;
@@ -10,9 +11,10 @@ body {
   margin-bottom: 40px;
   animation: fadeIn 1s ease-in;
 }
+
 .name {
   font-weight: bold;
-  font-size: 2.5rem; /* Adjust size of the name */
+  font-size: 2.5rem;
 }
 
 h1 {
@@ -34,7 +36,7 @@ p.thankyou {
   line-height: 1.6;
 }
 
-/* Carousel container adjustments */
+/* ---------- Carousel ---------- */
 #memoriesCarousel {
   margin: 0 auto;
   max-width: 1200px;
@@ -55,6 +57,7 @@ p.thankyou {
 .carousel-item {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .carousel-item img {
@@ -85,26 +88,7 @@ p.thankyou {
   z-index: 2;
 }
 
-.birthday-wish {
-  font-size: 4rem;
-  font-weight: 700;
-  font-family: 'Dancing Script', cursive;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  margin-bottom: 10px;
-  color: #fff;
-  white-space: nowrap;
-}
-
-.birthday-subtitle {
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  color: #fff;
-  opacity: 0.9;
-  white-space: nowrap;
-}
-
-/* Carousel indicators styling */
+/* Carousel indicators */
 .carousel-indicators {
   margin-bottom: 1rem;
   z-index: 3;
@@ -117,6 +101,7 @@ p.thankyou {
   margin: 0 5px;
   background-color: rgba(255, 255, 255, 0.5);
   border: 2px solid #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-indicators button.active {
@@ -124,12 +109,13 @@ p.thankyou {
   transform: scale(1.2);
 }
 
-/* Carousel controls styling */
+/* Carousel controls */
 .carousel-control-prev,
 .carousel-control-next {
   width: 10%;
   opacity: 0.8;
   z-index: 3;
+  transition: opacity 0.3s ease;
 }
 
 .carousel-control-prev:hover,
@@ -143,6 +129,92 @@ p.thankyou {
   height: 40px;
 }
 
+/* ---------- Image Gallery ---------- */
+.image-gallery {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #fff0f6;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.image-gallery h2 {
+  font-size: 2.5rem;
+  color: #d6336c;
+  margin-bottom: 30px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.images-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.images-container img.rotated-left {
+  transform: rotate(-10deg);
+}
+
+.images-container img.rotated-right {
+  transform: rotate(10deg);
+}
+
+.images-container img:hover {
+  transform: scale(1.1) rotate(0deg) !important;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* ---------- Modal ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  padding-top: 60px;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+
+/* ---------- Button Styling ---------- */
 .btn-birthday {
   margin-top: 40px;
   padding: 15px 40px;
@@ -160,6 +232,7 @@ p.thankyou {
   box-shadow: 0 6px 20px rgba(214, 51, 108, 0.4);
 }
 
+/* ---------- Animations ---------- */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -176,23 +249,14 @@ p.thankyou {
   }
 }
 
-@keyframes fall {
-  to {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* Responsive adjustments */
+/* ---------- Responsive Adjustments ---------- */
 @media (max-width: 1200px) {
   .carousel-inner {
     height: 600px;
   }
-  
   .birthday-wish {
     font-size: 3.5rem;
   }
-  
   .birthday-subtitle {
     font-size: 1.6rem;
   }
@@ -202,11 +266,9 @@ p.thankyou {
   .carousel-inner {
     height: 500px;
   }
-  
   .birthday-wish {
     font-size: 3rem;
   }
-  
   .birthday-subtitle {
     font-size: 1.4rem;
   }
@@ -220,7 +282,6 @@ p.thankyou {
   h1 {
     font-size: 2.5rem;
   }
-  
   #memoriesCarousel {
     padding: 0;
     margin: 0 -15px;
@@ -231,7 +292,6 @@ p.thankyou {
     position: relative;
     overflow: hidden;
   }
-  
   .carousel-inner {
     position: absolute;
     top: 0;
@@ -241,7 +301,6 @@ p.thankyou {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 0;
   }
-  
   .carousel-item {
     position: absolute;
     top: 0;
@@ -249,34 +308,11 @@ p.thankyou {
     width: 100%;
     height: 100%;
   }
-  
   .carousel-item .overlay-text {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    width: 100%;
     padding: 10px;
-    pointer-events: none;
-    user-select: none;
-    animation: fadeInUp 0.8s ease-out;
-    z-index: 2;
     width: 90%;
     box-sizing: border-box;
   }
-  
-  .birthday-wish {
-    font-size: 2rem;
-    white-space: normal;
-  }
-  
-  .birthday-subtitle {
-    font-size: 1rem;
-    white-space: normal;
-  }
-  
   .btn-birthday {
     padding: 12px 30px;
     font-size: 1.1rem;
@@ -288,29 +324,23 @@ p.thankyou {
     margin: 0 -20px;
     width: calc(100% + 40px);
   }
-  
   .carousel-inner {
     height: 400px;
   }
-  
   .carousel-item .overlay-text {
     padding: 8px;
     width: 95%;
   }
-  
   .birthday-wish {
     font-size: 1.8rem;
   }
-  
   .birthday-subtitle {
     font-size: 0.9rem;
   }
-  
   .btn-birthday {
     padding: 10px 25px;
     font-size: 1rem;
   }
-  
   .carousel-control-prev,
   .carousel-control-next {
     width: 15%;
@@ -321,94 +351,44 @@ p.thankyou {
   .carousel-inner {
     height: 350px;
   }
-  
   .carousel-item .overlay-text {
     padding: 5px;
     width: 100%;
   }
-  
   .birthday-wish {
     font-size: 1.5rem;
   }
-  
   .birthday-subtitle {
     font-size: 0.8rem;
   }
+  .images-container img {
+    width: 120px;
+    height: 120px;
+  }
 }
 
-/* Image Gallery Styles */
-.image-gallery {
-  margin-top: 60px;
-  padding: 20px;
-  background-color: #fff0f6; /* Light pink background */
-  border-radius: 15px;
-  text-align: center;
-}
-
-.image-gallery h2 {
-  font-size: 2.5rem;
-  color: #d6336c;
-  margin-bottom: 30px;
-  font-family: 'Dancing Script', cursive;
-}
-
-.images-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px; /* Space between images */
-}
-
-.images-container img {
-  width: 180px; /* Initial size, will adjust with responsiveness */
-  height: 180px; /* Initial size, will adjust with responsiveness */
-  object-fit: cover; /* Crop images to fit */
-  border: 8px solid #fff;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease-in-out;
-}
-
-.images-container img.rotated-left {
-  transform: rotate(-10deg); /* Adjust angle as needed */
-}
-
-.images-container img.rotated-right {
-  transform: rotate(10deg); /* Adjust angle as needed */
-}
-
-.images-container img:hover {
-  transform: scale(1.1) rotate(0deg) !important; /* Enlarge and straighten on hover */
-  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
-  z-index: 1; /* Bring to front on hover */
-}
-
-/* Responsive adjustments for Image Gallery */
+/* Image gallery responsive adjustments */
 @media (max-width: 768px) {
   .image-gallery {
     margin-top: 40px;
     padding: 15px;
   }
-
   .image-gallery h2 {
     font-size: 2rem;
     margin-bottom: 20px;
   }
-
   .images-container {
     gap: 20px;
   }
-
   .images-container img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
-
   .images-container img.rotated-left {
-    transform: rotate(-8deg); /* Adjust angle for mobile */
+    transform: rotate(-8deg);
   }
-
   .images-container img.rotated-right {
-    transform: rotate(8deg); /* Adjust angle for mobile */
+    transform: rotate(8deg);
   }
 }
 
@@ -417,29 +397,23 @@ p.thankyou {
     margin-top: 30px;
     padding: 10px;
   }
-
   .image-gallery h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
   }
-
   .images-container {
     gap: 15px;
   }
-
   .images-container img {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
   }
 }
-
-@media (max-width: 400px) {
-  .image-gallery h2 {
-    font-size: 1.5rem;
-  }
-
-  .images-container img {
-    width: 100px;
-    height: 100px;
-  }
+.click-instruction {
+  font-size: 1rem;
+  color: #888;
+  margin-top: -15px;
+  margin-bottom: 25px;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
 }
