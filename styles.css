@@ -1,0 +1,445 @@
+body {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+  text-align: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+.birthday-header {
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease-in;
+}
+.name {
+  font-weight: bold;
+  font-size: 2.5rem; /* Adjust size of the name */
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #d6336c;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  font-family: 'Dancing Script', cursive;
+}
+
+p.thankyou {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Carousel container adjustments */
+#memoriesCarousel {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 750px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(100%);
+  transition: filter 0.3s ease;
+}
+
+.carousel-item:hover img {
+  filter: brightness(60%);
+}
+
+.carousel-item .overlay-text {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  pointer-events: none;
+  user-select: none;
+  animation: fadeInUp 0.8s ease-out;
+  z-index: 2;
+}
+
+.birthday-wish {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin-bottom: 10px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.birthday-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  color: #fff;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+/* Carousel indicators styling */
+.carousel-indicators {
+  margin-bottom: 1rem;
+  z-index: 3;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #fff;
+}
+
+.carousel-indicators button.active {
+  background-color: #fff;
+  transform: scale(1.2);
+}
+
+/* Carousel controls styling */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  opacity: 0.8;
+  z-index: 3;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.btn-birthday {
+  margin-top: 40px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #d6336c, #ff4d6d);
+  border: none;
+  box-shadow: 0 4px 15px rgba(214, 51, 108, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-birthday:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(214, 51, 108, 0.4);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .carousel-inner {
+    height: 600px;
+  }
+  
+  .birthday-wish {
+    font-size: 3.5rem;
+  }
+  
+  .birthday-subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-inner {
+    height: 500px;
+  }
+  
+  .birthday-wish {
+    font-size: 3rem;
+  }
+  
+  .birthday-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    object-fit: contain;
+    height: auto;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  #memoriesCarousel {
+    padding: 0;
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+    border-radius: 0;
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel-item .overlay-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    pointer-events: none;
+    user-select: none;
+    animation: fadeInUp 0.8s ease-out;
+    z-index: 2;
+    width: 90%;
+    box-sizing: border-box;
+  }
+  
+  .birthday-wish {
+    font-size: 2rem;
+    white-space: normal;
+  }
+  
+  .birthday-subtitle {
+    font-size: 1rem;
+    white-space: normal;
+  }
+  
+  .btn-birthday {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #memoriesCarousel {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+  }
+  
+  .carousel-inner {
+    height: 400px;
+  }
+  
+  .carousel-item .overlay-text {
+    padding: 8px;
+    width: 95%;
+  }
+  
+  .birthday-wish {
+    font-size: 1.8rem;
+  }
+  
+  .birthday-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .btn-birthday {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 15%;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel-inner {
+    height: 350px;
+  }
+  
+  .carousel-item .overlay-text {
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .birthday-wish {
+    font-size: 1.5rem;
+  }
+  
+  .birthday-subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Image Gallery Styles */
+.image-gallery {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #fff0f6; /* Light pink background */
+  border-radius: 15px;
+  text-align: center;
+}
+
+.image-gallery h2 {
+  font-size: 2.5rem;
+  color: #d6336c;
+  margin-bottom: 30px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Space between images */
+}
+
+.images-container img {
+  width: 180px; /* Initial size, will adjust with responsiveness */
+  height: 180px; /* Initial size, will adjust with responsiveness */
+  object-fit: cover; /* Crop images to fit */
+  border: 8px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.images-container img.rotated-left {
+  transform: rotate(-10deg); /* Adjust angle as needed */
+}
+
+.images-container img.rotated-right {
+  transform: rotate(10deg); /* Adjust angle as needed */
+}
+
+.images-container img:hover {
+  transform: scale(1.1) rotate(0deg) !important; /* Enlarge and straighten on hover */
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  z-index: 1; /* Bring to front on hover */
+}
+
+/* Responsive adjustments for Image Gallery */
+@media (max-width: 768px) {
+  .image-gallery {
+    margin-top: 40px;
+    padding: 15px;
+  }
+
+  .image-gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .images-container {
+    gap: 20px;
+  }
+
+  .images-container img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .images-container img.rotated-left {
+    transform: rotate(-8deg); /* Adjust angle for mobile */
+  }
+
+  .images-container img.rotated-right {
+    transform: rotate(8deg); /* Adjust angle for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .image-gallery {
+    margin-top: 30px;
+    padding: 10px;
+  }
+
+  .image-gallery h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .images-container {
+    gap: 15px;
+  }
+
+  .images-container img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .image-gallery h2 {
+    font-size: 1.5rem;
+  }
+
+  .images-container img {
+    width: 100px;
+    height: 100px;
+  }
+}
