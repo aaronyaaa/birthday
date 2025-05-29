@@ -66,4 +66,21 @@ function openModal(imgElement) {
       closeModal();
     }
   };
-  
+     const openBtn = document.getElementById("openFormBtn");
+      const modal = document.getElementById("formModal");
+      const closeBtn = document.getElementById("closeModalBtn");
+
+      openBtn.addEventListener("click", () => {
+        modal.style.display = "flex"; // Show modal (flex for centering)
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none"; // Hide modal
+      });
+
+      // Also close modal if user clicks outside modal content
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });

@@ -64,3 +64,19 @@ function createConfetti() {
         container.remove();
     }, 5000);
 }
+document.getElementById('muteButton').addEventListener('click', function() {
+  const audio = document.getElementById('bgMusic');
+  if (audio.muted) {
+    audio.muted = false;
+    this.textContent = "Mute";  // Change button text to "Mute"
+  } else {
+    audio.muted = true;
+    this.textContent = "Unmute";  // Change button text to "Unmute"
+  }
+});
+
+
+function clearResponses() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  sheet.deleteRows(2, sheet.getLastRow() - 1);  // Deletes all rows except header
+}

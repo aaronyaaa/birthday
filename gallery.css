@@ -256,3 +256,45 @@
     height: 500px;
   }
 }
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+.background-music {
+  max-width: 600px;      /* Limit width inside container */
+  margin: 40px auto;     /* Vertical spacing + center horizontally */
+  text-align: center;
+}
+
+#bgMusic {
+  display: none;         /* Hide default audio controls */
+}
+
+#muteButton {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #d6336c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(214, 51, 108, 0.4);
+}
+
+#muteButton:hover {
+  background-color: #f08a5d;
+}
+
+.gratitude-wall blockquote {
+  background: #fff4f6;
+  border-left: 6px solid #d6336c;
+  padding: 15px 20px;
+  margin: 10px 0;
+  font-style: italic;
+  color: #6b1e3f;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(214, 51, 108, 0.15);
+}
